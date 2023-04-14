@@ -16,7 +16,7 @@ Wynik testu PURPUROWEGO: 14/14
 
 1. **scouts_panel_header_xpath** 
 
-   - //*[@id="__next"]/form/div/div[1]/h5
+   - //h5
    
    - //*[text()="Scouts Panel"]
 
@@ -38,7 +38,7 @@ Wynik testu PURPUROWEGO: 14/14
    
    - //input[@name="password"]
    
-   - //*[@id="__next"]/form/div/div/div[2]/div/input
+   - //form/div/div/div[2]/div/input
 
 
 4. **remind_password_hyperlink_xpath**
