@@ -1,18 +1,37 @@
-# Zadanie 1: konfiguracja oprogramowania
+# Zadanie 1: Konfiguracja oprogramowania
 
 ## Podzadanie 1: "Dlaczego zdecydowałam się wziąć udział w wyzwaniu Dare IT Challenge?"
 
 1. Mam na imię Paulina i jestem kulturoznawczynią zakochaną w Pythonie...Dysonans? Bynajmniej 😃.
 Cenię sobie w życiu równowagę, chciałam więc sprawdzić jak poradzę sobie w czymś "z zupełnie innej beczki". 
+
 2. Na 8-miesięcznym kursie Cyber Trainees organizowanym przez Instytut Kościuszki i Fundację Microsoft poznałam Pythona i...przepadłam 🤓. 
+
 3. Nauczyłam się solidnych podstaw pisania w tym języku, ukończyłam również klasę testerską, tak więc wyzwanie **Dare IT - Wstęp do testów automatycznych** - które łączy testowanie z Pythonem - wydało mi się wyborem całkowicie naturalnym.
+
 4. Chcę poznać lepiej Github, stworzyć własne portfolio i wykorzystać dotychczasową wiedzę w praktyce.
 
 ## Podzadanie 4:
 
-Wynik testu PURPUROWEGO: 14/14
+
+Wynik testu PURPUROWEGO http://getistqb.com/quiz-purpurowy/:
+
+![img_1.png](img_1.png)
 
 # Zadanie 2: selektory
+
+To zadanie nauczyło mnie:
+
+✅ czym są selektory,
+
+✅ gdzie szukać selektorów,
+
+✅ zapisu xPath’ów,
+
+✅ czym się kierować, aby wyodrębnić te “najlepsze” selektory
+
+### Selektory do strony logowania 
+**https://scouts-test.futbolkolektyw.pl/**
 
 1. **scouts_panel_header_xpath** 
 
@@ -67,3 +86,18 @@ Wynik testu PURPUROWEGO: 14/14
    
    - //*[contains(@class, "MuiButton-l")] 
 
+# Zadanie 3: Pierwszy test automatyczny i asserty
+
+To zadanie pozwoliło mi m.in.:
+
+✅ poznać dogłębnie framework Selenium,
+
+✅ klikać w elementy na stronie,
+
+✅ wypełniać pola tekstem,
+
+✅ wykorzystywać assert title, 
+
+✅ uruchomić test.
+
+﻿🚨 **Zajrzyj do plików z kodem, by ocenić moją pracę!** 😊
