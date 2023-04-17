@@ -1,8 +1,8 @@
 from pages.base_page import BasePage
+import time
 
 
 class Dashboard(BasePage):
-
     main_page_button_xpath = "//ul[1]/div[1]/div[2]/span"
     sign_out_button_xpath = "//ul[2]/div[2]/div[2]/span"
     scouts_panel_logo_background_image_xpath = "//*[@title='Logo Scouts Panel']"
@@ -20,6 +20,17 @@ class Dashboard(BasePage):
     last_updated_match_button_xpath = "//a[4]/button/span[1]"
     last_updated_report_header_xpath = "//h6[5]"
     last_updated_report_button_xpath = "a[5]/button/span[1]"
+    expected_title = "Scouts panel"
+    dashboard_url = 'https://scouts-test.futbolkolektyw.pl/'
+    add_a_player_button_xpath = "//div[2]/div/div/a/button/span[1]"
+
+    def title_of_page(self):
+        test_title = self.get_page_title(self.dashboard_url)
+        time.sleep(4)
+        assert self.get_page_title(self.dashboard_url) == self.expected_title
+
+    def click_add_player_button(self):
+        self.click_on_the_element(self.add_a_player_button_xpath)
 
 
-pass
+
