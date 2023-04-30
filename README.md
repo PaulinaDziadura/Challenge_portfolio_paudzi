@@ -90,7 +90,7 @@ To zadanie nauczyło mnie:
 
 To zadanie pozwoliło mi m.in.:
 
-✅ poznać dogłębnie framework Selenium,
+✅ poznać framework Selenium,
 
 ✅ klikać w elementy na stronie,
 
@@ -98,6 +98,22 @@ To zadanie pozwoliło mi m.in.:
 
 ✅ wykorzystywać assert title, 
 
-✅ uruchomić test.
+✅ uruchomić test
 
 ﻿🚨 **Zajrzyj do plików z kodem, by ocenić moją pracę!** 😊
+
+# Zadanie 4: Refactor, debugger i przypadki testowe
+
+W tym zadaniu m.in.:
+
+✅ wykonaliśmy refactor naszego kodu,
+
+✅ dowiedzieliśmy się jak pracować z debuggerem,
+
+✅ zaprojektowaliśmy i napisaliśmy własne test case’y,
+
+✅ zautomatyzowaliśmy stronę internetową na podstawie TC.
+
+Poniżej link do dysku, gdzie znajdziesz moje Test Case'y:
+
+https://drive.google.com/drive/folders/1_ImIsMVBsofccNHl1ZmAkKrP1K7fJCOz?usp=share_link

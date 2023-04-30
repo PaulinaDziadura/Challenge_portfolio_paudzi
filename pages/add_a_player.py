@@ -4,23 +4,31 @@ from pages.base_page import BasePage
 
 
 class AddAPlayer(BasePage):
-    email_field_xpath = "//div[1]/div/div/input"
-    name_field_xpath = "//div[2]/div/div/input"
-    surname_field_xpath = "//div[3]/div/div/input"
-    phone_field_xpath = "//div[4]/div/div/input"
-    weight_field_xpath = "//div[5]/div/div/input"
-    height_field_xpath = "//div[6]/div/div/input"
-    age_field_xpath = "//div[7]/div/div/input"
-    leg_listbox_xpath = "//*[@id='mui-component-select-leg']"
-    club_field_xpath = "//div[9]/div/div/input"
-    level_field_xpath = "//div[10]/div/div/input"
-    main_position_field_xpath = "//div[11]/div/div/input"
-    second_position_xpath = "//div[12]/div/div/input"
-    district_listbox_xpath = "//*[@id='mui-component-select-district']"
-    achievements_field_xpath = "//div[14]/div/div/input"
-    submit_button_xpath = "//div[3]/button[1]/span[1]"
+
+    page_title_xpath = "//header//h6"
+    email_field_xpath = "//input[@name='email']"
+    name_field_xpath = "//input[@name='name']"
+    surname_field_xpath = "//input[@name='surname']"
+    phone_field_xpath = "//input[@name='phone']"
+    weight_field_xpath = "//input[@name='weight']"
+    height_field_xpath = "//input[@name='height']"
+    age_field_xpath = "//input[@name='age']"
+    leg_field_xpath = "//input[@name='leg']"
+    club_field_xpath = "//input[@name='club']"
+    level_field_xpath = "//input[@name='level']"
+    main_position_field_xpath = "//input[@name='mainPosition']"
+    second_position_field_xpath = "//input[@name='secondPosition']"
+    district_field_xpath = "//*[contains(@id,'select-district')]"
+    achievements_field_xpath = "//input[@name='achievements']"
+    add_lang_button_xpath = "//button[@aria-label='Add language']"
+    facebook_field_xpath = "//input[@name='webFB']"
+    add_youtube_button_xpath = "//button[@aria-label='Add link to Youtube']"
+    submit_button_xpath = "//button[@type='submit']"
+    clear_button_xpath = "//button[@type='submit']//following-sibling::button"
+    progress_bar_toaster_xpath = "//*[@role='alert']"
     add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
     expected_title = 'Add player'
+    expected_title_player_added = "Edit player Marian Kowalski"
 
     def type_in_email(self, email):
         self.field_send_keys(self.email_field_xpath, email)
@@ -51,8 +59,10 @@ class AddAPlayer(BasePage):
 
     def title_of_page(self):
         test_title = self.get_page_title(self.add_a_player_url)
-        time.sleep(4)
-        assert self.get_page_title(self.add_a_player_url) == self.expected_title
+        self.wait_for_element_to_be_clickable(self.submit_button_xpath)
+        assert test_title == self.expected_title
 
-
+    def player_added_title_of_the_page(self):
+        self.wait_for_element_to_be_visible(self.progress_bar_toaster_xpath)
+        assert self.driver.title == self.expected_title_player_added
 

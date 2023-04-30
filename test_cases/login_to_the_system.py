@@ -1,6 +1,7 @@
 import os
 import unittest
 import time
+#from Pillow import Image
 
 from selenium import webdriver
 
@@ -19,20 +20,38 @@ class TestLoginPage(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-
-
     def test_log_in_to_the_system(self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
-        user_login.check_page_title()
+        user_login.check_header_of_box()
         user_login.type_in_email('user01@getnada.com')
         user_login.type_in_password('Test-1234')
         user_login.click_sign_in_button()
-        time.sleep(15)
+        time.sleep(5)
         dashboard_page = Dashboard(self.driver)
         dashboard_page.title_of_page()
+        time.sleep(5)
+
+    def test_log_in_with_invalid_data(self):
+        user_login = LoginPage(self.driver)
+        user_login.title_of_page()
+        user_login.check_header_of_box()
+        user_login.type_in_email('user01@getnada.com')
+        user_login.type_in_password('Test-1234567')
+        user_login.click_sign_in_button()
+        user_login.invalid_data()
         time.sleep(5)
 
     @classmethod
     def tearDown(self):
         self.driver.quit()
+
+
+
+
+'''
+        self.driver.save_screenshot(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/login_to_the_system/login-form-filled.png")
+        Image.open(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/login_to_the_system/login-form-filled.png").show()
+'''
