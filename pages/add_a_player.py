@@ -1,6 +1,7 @@
 import time
 
 from pages.base_page import BasePage
+from faker import Faker
 
 
 class AddAPlayer(BasePage):
@@ -48,34 +49,50 @@ class AddAPlayer(BasePage):
     progress_bar_toaster_xpath = "//*[@role='alert']"
     add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
     expected_title = 'Add player'
-    expected_title_player_added = "Edit player Marian Kowalski"
+    name = ""
+    surname = ""
+    expected_title_player_added = " "
 
-
-
-    def type_in_email(self, email):
+    def type_in_email(self):
+        fake = Faker()
+        email = fake.email()
         self.field_send_keys(self.email_field_xpath, email)
 
-    def type_in_name(self, name):
-        self.field_send_keys(self.name_field_xpath, name)
+    def type_in_name(self):
+        fake = Faker()
+        self.name = fake.name()
+        self.field_send_keys(self.name_field_xpath, self.name)
 
-    def type_in_surname(self, surname):
-        self.field_send_keys(self.surname_field_xpath, surname)
+    def type_in_surname(self):
+        fake = Faker()
+        self.surname = fake.last_name()
+        self.field_send_keys(self.surname_field_xpath, self.surname)
 
-    def type_in_phone(self, phone):
+    def type_in_phone(self):
+        fake = Faker()
+        phone = fake.phone_number()
         self.field_send_keys(self.phone_field_xpath, phone)
 
-    def type_in_weight(self, weight):
+    def type_in_weight(self):
+        fake = Faker()
+        weight = fake.random_int(min=50, max=150)
         self.field_send_keys(self.weight_field_xpath, weight)
 
-    def type_in_height(self, height):
+    def type_in_height(self):
+        fake = Faker()
+        height = fake.random_int(min=150, max=200)
         self.field_send_keys(self.height_field_xpath, height)
 
-    def type_in_age(self, age):
+    def type_in_age(self):
+        fake = Faker()
+        age = fake.date()
         self.field_send_keys(self.age_field_xpath, age)
 
-    def select_leg(self, leg):
+    def select_leg(self):
         self.wait_for_element_to_be_clickable(self.leg_dropdown_xpath)
         self.click_on_the_element(self.leg_dropdown_xpath)
+        fake = Faker()
+        leg = fake.random_element(elements=('left', 'right'))
         if leg == "left":
             self.wait_for_element_to_be_clickable(self.left_leg_option_xpath)
             self.click_on_the_element(self.left_leg_option_xpath)
@@ -83,19 +100,33 @@ class AddAPlayer(BasePage):
             self.wait_for_element_to_be_clickable(self.right_leg_option_xpath)
             self.click_on_the_element(self.right_leg_option_xpath)
 
-    def type_in_club(self, club):
+    def type_in_club(self):
+        fake = Faker()
+        club = fake.text()
         self.field_send_keys(self.club_field_xpath, club)
 
-    def type_in_level(self, level):
+    def type_in_level(self):
+        fake = Faker()
+        level = fake.text()
         self.field_send_keys(self.level_field_xpath, level)
 
-    def type_in_main_position(self, main_position):
+    def type_in_main_position(self):
+        fake = Faker()
+        main_position = fake.job()
         self.field_send_keys(self.main_position_field_xpath, main_position)
 
-    def type_in_second_position(self, second_position):
+    def type_in_second_position(self):
+        fake = Faker()
+        second_position = fake.job()
         self.field_send_keys(self.second_position_field_xpath, second_position)
 
-    def select_district(self, district):
+    def select_district(self):
+        fake = Faker()
+        district = fake.random_element(
+            elements=('Lower Silesia', 'Pomerania', 'Masovia' 'Lublin', 'Lubusz', 'Łódź', 'Kuyavia-Pomerania'
+                                                                                          'Lesser Poland', 'Opole',
+                      'Subcarpathia', 'Silesia', 'Podlaskie', 'Holy Cross Province', 'Warmia-Masuria', 'Greater Poland',
+                      'West Pomerania'))
         self.wait_for_element_to_be_clickable(self.district_field_xpath)
         self.click_on_the_element(self.district_field_xpath)
         xpath = self.district_xpath_map.get(district)
@@ -103,7 +134,9 @@ class AddAPlayer(BasePage):
             self.wait_for_element_to_be_clickable(xpath)
             self.click_on_the_element(xpath)
 
-    def type_in_achievements(self,achievements):
+    def type_in_achievements(self):
+        fake = Faker()
+        achievements = fake.text()
         self.field_send_keys(self.achievements_field_xpath, achievements)
 
     def click_submit_button(self):
@@ -116,8 +149,6 @@ class AddAPlayer(BasePage):
 
     def player_added_title_of_the_page(self):
         self.wait_for_element_to_be_visible(self.progress_bar_toaster_xpath)
-        assert self.driver.title == self.expected_title_player_added
-
-
-
-
+        player_title = self.driver.title
+        self.expected_title_player_added = f"Edit player {self.name} {self.surname}"
+        assert player_title == self.expected_title_player_added
