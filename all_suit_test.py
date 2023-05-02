@@ -3,7 +3,7 @@ import unittest
 from unittest.loader import makeSuite
 
 from test_cases.add_a_new_player import TestAddAPlayer
-from test_cases.changing_language_before_loggin_in import TestChangeLanguage
+from test_cases.changing_language_before_login_in import TestChangeLanguage
 from test_cases.log_out import TestLogOut
 from test_cases.login_to_the_system import TestLoginPage
 

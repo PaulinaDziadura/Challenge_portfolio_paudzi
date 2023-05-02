@@ -1,10 +1,11 @@
 import os
 import unittest
-import time
+
 from selenium import webdriver
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 from pages.login_page import LoginPage
 from pages.dashboard import Dashboard
+from PIL import Image
 
 
 class TestLogOut(unittest.TestCase):
@@ -25,11 +26,16 @@ class TestLogOut(unittest.TestCase):
         user_login.click_sign_in_button()
         dashboard_page = Dashboard(self.driver)
         dashboard_page.title_of_page()
-        time.sleep(3)
+        self.driver.save_screenshot(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/dashboard.png")
+        Image.open(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/dashboard.png").show()
         dashboard_page.click_sign_out_button()
-        time.sleep(3)
         user_login.title_of_page()
-        time.sleep(3)
+        self.driver.save_screenshot(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/logged_out.png")
+        Image.open(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/logged_out.png").show()
 
     @classmethod
     def tearDown(self):

@@ -101,6 +101,7 @@ To zadanie pozwoliło mi m.in.:
 ✅ uruchomić test
 
 ﻿🚨 **Zajrzyj do plików z kodem, by ocenić moją pracę!** 😊
+https://github.com/PaulinaDziadura/Challenge_portfolio_paudzi.git
 
 # Zadanie 4: Refactor, debugger i przypadki testowe
 
@@ -114,6 +115,24 @@ W tym zadaniu m.in.:
 
 ✅ zautomatyzowaliśmy stronę internetową na podstawie TC.
 
-Poniżej link do dysku, gdzie znajdziesz moje Test Case'y:
+﻿🚨 **Poniżej link do folderu, w którym znajdziesz moje Test Case'y:**
 
 https://drive.google.com/drive/folders/1_ImIsMVBsofccNHl1ZmAkKrP1K7fJCOz?usp=share_link
+
+# Zadanie 5: Robot framework
+
+
+To zadanie pozwoliło mi m.in.:
+
+✅ dowiedzieć się czym jest Smoke Tests
+
+✅ dowiedzieć się jak skonfigurować Suite Test
+
+✅ poznać nowy framework,
+
+✅ wygenerować automatycznie raport
+
+
+﻿🚨 **Poniżej link do mojego repo z robotem**😊
+
+👉 https://github.com/PaulinaDziadura/dareit_challenge_portfolio_robotframework.git

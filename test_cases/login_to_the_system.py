@@ -1,7 +1,7 @@
 import os
 import unittest
 import time
-#from Pillow import Image
+from PIL import Image
 
 from selenium import webdriver
 
@@ -27,10 +27,12 @@ class TestLoginPage(unittest.TestCase):
         user_login.type_in_email('user01@getnada.com')
         user_login.type_in_password('Test-1234')
         user_login.click_sign_in_button()
-        time.sleep(5)
+        self.driver.save_screenshot(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/login_to_the_system/login_form_filled.png")
+        Image.open(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/login_to_the_system/login_form_filled.png").show()
         dashboard_page = Dashboard(self.driver)
         dashboard_page.title_of_page()
-        time.sleep(5)
 
     def test_log_in_with_invalid_data(self):
         user_login = LoginPage(self.driver)
@@ -40,18 +42,12 @@ class TestLoginPage(unittest.TestCase):
         user_login.type_in_password('Test-1234567')
         user_login.click_sign_in_button()
         user_login.invalid_data()
+        self.driver.save_screenshot(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/login_to_the_system/invalid_data.png")
+        Image.open(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/login_to_the_system/invalid_data.png").show()
         time.sleep(5)
 
     @classmethod
     def tearDown(self):
         self.driver.quit()
-
-
-
-
-'''
-        self.driver.save_screenshot(
-            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/login_to_the_system/login-form-filled.png")
-        Image.open(
-            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/login_to_the_system/login-form-filled.png").show()
-'''

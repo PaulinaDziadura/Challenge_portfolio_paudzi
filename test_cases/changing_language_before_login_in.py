@@ -5,6 +5,7 @@ from selenium import webdriver
 
 from pages.login_page import LoginPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
+from PIL import Image
 
 
 class TestChangeLanguage(unittest.TestCase):
@@ -17,12 +18,16 @@ class TestChangeLanguage(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_changing_language_before_loggin_in(self):
+    def test_changing_language_before_login_in(self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
         user_login.click_english_language_listbox()
         user_login.click_polski_language_option()
         user_login.title_of_polish_page()
+        self.driver.save_screenshot(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/changing_to_polish/polski_on_main_page.png")
+        Image.open(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/changing_to_polish/polski_on_main_page.png").show()
 
     @classmethod
     def tearDown(self):

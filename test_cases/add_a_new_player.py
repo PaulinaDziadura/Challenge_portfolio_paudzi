@@ -1,11 +1,12 @@
 import os
 import unittest
-import time
+
 from selenium import webdriver
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 from pages.login_page import LoginPage
 from pages.dashboard import Dashboard
 from pages.add_a_player import AddAPlayer
+from PIL import Image
 
 
 class TestAddAPlayer(unittest.TestCase):
@@ -32,10 +33,21 @@ class TestAddAPlayer(unittest.TestCase):
         add_a_player.type_in_email('test@test.pl')
         add_a_player.type_in_name("Marian")
         add_a_player.type_in_surname("Kowalski")
+        add_a_player.type_in_phone("555555555")
+        add_a_player.type_in_weight('87')
+        add_a_player.type_in_height('187')
         add_a_player.type_in_age('01-01-1999')
+        add_a_player.select_leg("left")
         add_a_player.type_in_main_position('striker')
+        add_a_player.type_in_second_position('Winger')
+        add_a_player.select_district("Lower Silesia")
+        add_a_player.type_in_achievements("Bestfromthebest")
         add_a_player.click_submit_button()
         add_a_player.player_added_title_of_the_page()
+        self.driver.save_screenshot(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/add_a_new_player/added_player.png")
+        Image.open(
+            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/add_a_new_player/added_player.png").show()
 
 
     @classmethod
