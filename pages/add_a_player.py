@@ -20,39 +20,23 @@ class AddAPlayer(BasePage):
     main_position_field_xpath = "//input[@name='mainPosition']"
     second_position_field_xpath = "//input[@name='secondPosition']"
     district_field_xpath = "//*[contains(@id,'select-district')]"
-    lower_silesia_distr_xpath ="//li[1]"
-    kuyavia_pomerania_distr_xpath = "//li[2]"
-    lublin_distr_xpath = "//li[3]"
-    lubusz_distr_xpath= "//li[4]"
-    lodz_distr_xpath= "//li[5]"
-    lesser_poland_distr_xpath= "//li[6]"
-    masovia_distr_xpath= "//li[7]"
-    opole_distr_xpath= "//li[8]"
-    subcarpathia_distr_xpath= "//li[9]"
-    podlaskie_distr_xpath= "//li[10]"
-    pomerania_distr_xpath= "//li[11]"
-    silesia_distr_xpath= "//li[12]"
-    holy_cross_province_distr_xpath= "//li[13]"
-    warmia_masuria_distr_xpath= "//li[14]"
-    greater_poland_distr_xpath= "//li[15]"
-    west_pomerania_distr_xpath= "//li[16]"
     district_xpath_map = {
         "Lower Silesia": "//li[1]",
-        "Kuyavia-Pomerania": kuyavia_pomerania_distr_xpath,
-        "Lublin": lublin_distr_xpath,
-        "Lubusz": lubusz_distr_xpath,
-        "Łódź": lodz_distr_xpath,
-        "Lesser Poland": lesser_poland_distr_xpath,
-        "Masovia": masovia_distr_xpath,
-        "Opole": opole_distr_xpath,
-        "Subcarpathia": subcarpathia_distr_xpath,
-        "Podlaskie": podlaskie_distr_xpath,
-        "Pomerania": pomerania_distr_xpath,
-        "Silesia": silesia_distr_xpath,
-        "Holy Cross Province": holy_cross_province_distr_xpath,
-        "Warmia-Masuria": warmia_masuria_distr_xpath,
-        "Greater Poland": greater_poland_distr_xpath,
-        "West Pomerania": west_pomerania_distr_xpath
+        "Kuyavia-Pomerania": "//li[2]",
+        "Lublin": "//li[3]",
+        "Lubusz": "//li[4]",
+        "Łódź": "//li[5]",
+        "Lesser Poland": "//li[6]",
+        "Masovia": "//li[7]",
+        "Opole": "//li[8]",
+        "Subcarpathia": "//li[9]",
+        "Podlaskie": "//li[10]",
+        "Pomerania": "//li[11]",
+        "Silesia": "//li[12]",
+        "Holy Cross Province": "//li[13]",
+        "Warmia-Masuria": "//li[14]",
+        "Greater Poland": "//li[15]",
+        "West Pomerania": "//li[16]"
 
     }
     achievements_field_xpath = "//input[@name='achievements']"
@@ -137,15 +121,3 @@ class AddAPlayer(BasePage):
 
 
 
-'''
-    def select_district(self,district):
-        if district == "Lower Silesia":
-            self.wait_for_element_to_be_clickable(self.lower_silesia_distr_xpath)
-            self.click_on_the_element(self.lower_silesia_distr_xpath)
-        elif district == "Kuyavia-Pomerania ":
-            self.wait_for_element_to_be_clickable(self.kuyavia_pomerania_distr_xpath)
-            self.click_on_the_element(self.kuyavia_pomerania_distr_xpath)
-        elif district == "Lublin ":
-            self.wait_for_element_to_be_clickable(self.lubusz_distr_xpath)
-            self.click_on_the_element(self.lublin_distr_xpath)
-'''
