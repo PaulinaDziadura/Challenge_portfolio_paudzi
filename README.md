@@ -168,7 +168,7 @@ To zadanie pozwoliło mi m.in.:
 ✅ Stworzyć repozytorium z funkcjonalnym portfolio w README file
 
 ﻿🚨 **Poniżej link do folderu z raportem i zgłoszonymi bugami**
-👉https://docs.google.com/spreadsheets/d/1-PcKtRM2DiPMSbgT_pFD5FL2E60Hn9dbKGnShh4MmL8/edit?usp=share_link
+👉https://drive.google.com/drive/folders/1KR7Czprvqt8gESw98500DYPPRA8DW_1N?usp=share_link
 
 **oraz do mojego portfolio:**
 👉 https://github.com/PaulinaDziadura/Paulina-Dziadura.git
