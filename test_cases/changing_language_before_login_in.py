@@ -14,16 +14,16 @@ class TestChangeLanguage(unittest.TestCase):
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
+        self.driver.get('https://scouts.futbolkolektyw.pl/en/')
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
     def test_changing_language_before_login_in(self):
         user_login = LoginPage(self.driver)
-        user_login.title_of_page()
+        #user_login.title_of_page()
         user_login.click_english_language_listbox()
         user_login.click_polski_language_option()
-        user_login.title_of_polish_page()
+        #user_login.title_of_polish_page()
         self.driver.save_screenshot(
             "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/changing_to_polish/polski_on_main_page.png")
         Image.open(

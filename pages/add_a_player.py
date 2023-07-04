@@ -47,7 +47,7 @@ class AddAPlayer(BasePage):
     submit_button_xpath = "//button[@type='submit']"
     clear_button_xpath = "//button[@type='submit']//following-sibling::button"
     progress_bar_toaster_xpath = "//*[@role='alert']"
-    add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
+    add_a_player_url = "https://scouts.futbolkolektyw.pl/en/players/add"
     expected_title = 'Add player'
     name = ""
     surname = ""

@@ -14,24 +14,24 @@ class TestLogOut(unittest.TestCase):
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
+        self.driver.get('https://scouts.futbolkolektyw.pl/en/')
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
     def test_log_out_of_the_system(self):
         user_login = LoginPage(self.driver)
-        user_login.title_of_page()
+        #user_login.title_of_page()
         user_login.type_in_email('user01@getnada.com')
         user_login.type_in_password('Test-1234')
         user_login.click_sign_in_button()
         dashboard_page = Dashboard(self.driver)
-        dashboard_page.title_of_page()
+        #dashboard_page.title_of_page()
         self.driver.save_screenshot(
             "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/dashboard.png")
         Image.open(
             "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/dashboard.png").show()
         dashboard_page.click_sign_out_button()
-        user_login.title_of_page()
+        #user_login.title_of_page()
         self.driver.save_screenshot(
             "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/logged_out.png")
         Image.open(
