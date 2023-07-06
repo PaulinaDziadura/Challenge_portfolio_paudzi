@@ -17,6 +17,7 @@ class LoginPage(BasePage):
     polski_option_xpath = "//div[3]/ul/li[1]"
     invalid_data_text_xpath = "// div[3] / span"
     expected_invalid_data_text = "Identifier or password invalid."
+
     def type_in_email(self, email):
         self.field_send_keys(self.login_field_xpath, email)
 
@@ -44,4 +45,4 @@ class LoginPage(BasePage):
         self.click_on_the_element(self.polski_option_xpath)
 
     def invalid_data(self):
-        self.assert_element_text(self.driver,self.invalid_data_text_xpath,self.expected_invalid_data_text)
+        self.assert_element_text(self.driver, self.invalid_data_text_xpath, self.expected_invalid_data_text)

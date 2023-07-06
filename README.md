@@ -5,7 +5,7 @@
 * [Zadanie 1 - Konfiguracja oprogramowania](#zadanie-1)
   * [Podzadanie 1](#podzadanie-1)
   * [Podzadanie 4](#podzadanie-4)
->>>>>>> c88cc371ac839b4df545bdc36ae04ca47e9bbd97
+
 
 * [Zadanie 2 - Selektory](#zadanie-2)
 * [Zadanie 3 - Pierwszy test automatyczny i asserty](#zadanie-3)

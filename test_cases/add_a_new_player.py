@@ -53,7 +53,6 @@ class TestAddAPlayer(unittest.TestCase):
         self.driver.save_screenshot(added_player_file_path)
         Image.open(added_player_file_path).show()
 
-
-    @ classmethod
+    @classmethod
     def tearDown(self):
         self.driver.quit()

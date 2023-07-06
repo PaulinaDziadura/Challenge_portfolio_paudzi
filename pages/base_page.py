@@ -22,7 +22,6 @@ class BasePage():
         self.driver.get(url)
         return self.driver.title
 
-
     @staticmethod
     def assert_element_text(driver, xpath, expected_text, selector_type=By.XPATH):
         element = driver.find_element(selector_type, xpath)

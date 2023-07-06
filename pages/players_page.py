@@ -1,8 +1,7 @@
 from pages.base_page import BasePage
 
 
-class PlayersPage (BasePage):
-
+class PlayersPage(BasePage):
     players_page_url = 'https://scouts.futbolkolektyw.pl/en//en/players'
     download_csv_button_xpath = '//*[@title="Download CSV"]'
     print_button_xpath = '//*[@title="Print"]'

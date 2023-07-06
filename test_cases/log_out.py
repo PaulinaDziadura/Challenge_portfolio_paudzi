@@ -20,22 +20,20 @@ class TestLogOut(unittest.TestCase):
 
     def test_log_out_of_the_system(self):
         user_login = LoginPage(self.driver)
-        #user_login.title_of_page()
+        dashboard_file_path = os.path.abspath("screenshots/log_out/dashboard.png")
+        logged_out_file_path = os.path.abspath("screenshots/log_out/logged_out.png")
+        # user_login.title_of_page()
         user_login.type_in_email('user01@getnada.com')
         user_login.type_in_password('Test-1234')
         user_login.click_sign_in_button()
         dashboard_page = Dashboard(self.driver)
-        #dashboard_page.title_of_page()
-        self.driver.save_screenshot(
-            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/dashboard.png")
-        Image.open(
-            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/dashboard.png").show()
+        # dashboard_page.title_of_page()
+        self.driver.save_screenshot(dashboard_file_path)
+        Image.open(dashboard_file_path).show()
         dashboard_page.click_sign_out_button()
-        #user_login.title_of_page()
-        self.driver.save_screenshot(
-            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/logged_out.png")
-        Image.open(
-            "C:/Users/dziad/Documents/GitHub/Challenge_portfolio_paudzi/test_cases/screenshots/log_out/logged_out.png").show()
+        # user_login.title_of_page()
+        self.driver.save_screenshot(logged_out_file_path)
+        Image.open(logged_out_file_path).show()
 
     @classmethod
     def tearDown(self):

@@ -28,7 +28,6 @@ class Test(unittest.TestCase):
 
 class TestMediumPage(unittest.TestCase):
 
-
     @classmethod
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
@@ -46,8 +45,6 @@ class TestMediumPage(unittest.TestCase):
         self.driver.get(url)
         return self.driver.title
 
-
     @classmethod
     def tearDown(self):
         self.driver.quit()
-

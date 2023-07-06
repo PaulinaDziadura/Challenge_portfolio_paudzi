@@ -9,13 +9,14 @@ from test_cases.login_to_the_system import TestLoginPage
 
 
 def full_suite():
-   test_suite = unittest.TestSuite()
-   test_suite.addTest(makeSuite(TestLoginPage))
-   test_suite.addTest(makeSuite(TestLogOut))
-   test_suite.addTest(makeSuite(TestChangeLanguage))
-   test_suite.addTest(makeSuite(TestAddAPlayer))
-   return test_suite
+    test_suite = unittest.TestSuite()
+    test_suite.addTest(makeSuite(TestLoginPage))
+    test_suite.addTest(makeSuite(TestLogOut))
+    test_suite.addTest(makeSuite(TestChangeLanguage))
+    test_suite.addTest(makeSuite(TestAddAPlayer))
+    return test_suite
+
 
 if __name__ == '__main__':
-   runner = unittest.TextTestRunner(verbosity=2)
-   runner.run(full_suite())
+    runner = unittest.TextTestRunner(verbosity=2)
+    runner.run(full_suite())
