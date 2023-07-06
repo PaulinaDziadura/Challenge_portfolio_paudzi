@@ -1,6 +1,6 @@
 
 # Zadanie 1: Konfiguracja oprogramowania
-=======
+
 ## Spis treści
 * [Zadanie 1 - Konfiguracja oprogramowania](#zadanie-1)
   * [Podzadanie 1](#podzadanie-1)
